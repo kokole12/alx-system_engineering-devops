@@ -1,2 +1,2 @@
 #!/bin/bash
-l;s -a -l -@
+ls -a -l -@
