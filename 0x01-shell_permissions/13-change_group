@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R school:hello ./
+chmod -R hello:school ./
