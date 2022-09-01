@@ -1,2 +1,2 @@
 #!/bin/bash
-file -m school -s SCHOOL
+file -m school -o SCHOOL
