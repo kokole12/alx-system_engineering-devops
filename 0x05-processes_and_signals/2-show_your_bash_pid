@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#script that turns pids for bash files
+
+ps auxf | grep bash
+

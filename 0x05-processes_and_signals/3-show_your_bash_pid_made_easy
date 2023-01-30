@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#script that returns the bash pid without using ps
+
+pgrep -l bash
+
