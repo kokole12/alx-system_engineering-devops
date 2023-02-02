@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#liatens to local host at 98
+nc -l 98
+
