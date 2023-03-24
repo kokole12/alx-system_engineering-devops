@@ -1,0 +1,3 @@
+#!/usr/bun/env bash
+ssh ubuntu@34.229.49.139 -i ~/.ssh/school
+
