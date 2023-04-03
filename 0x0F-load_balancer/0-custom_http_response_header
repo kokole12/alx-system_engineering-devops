@@ -29,3 +29,4 @@ sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/si
 
 # restart the web server after updating the settings
 sudo service nginx restart
+
