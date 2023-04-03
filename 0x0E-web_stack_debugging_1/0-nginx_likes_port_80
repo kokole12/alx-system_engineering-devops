@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# debugging to return site to port 80
+# looking a /etc/nginx/sites-availabe/default listening to port 80
+# use the following command to create a symlink to 
+# /etc/nginx/sites-enabled/default which was listening to port 8080
+# -f is to force an overrite on the file at the target location without confirmation
+# -s  specifies that the symlink has to be created
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
