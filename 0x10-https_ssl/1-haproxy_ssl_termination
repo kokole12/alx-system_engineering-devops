@@ -1,4 +1,4 @@
-globals
+global
 	log /dev/log	local0
 	log /dev/log	local1 notice
 	chroot /var/lib/haproxy
@@ -33,18 +33,16 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-
-frontend webkokole-frontend-http
+frontend webkokole-frontend
 	bind *:80
 	mode http
-	http-request set-header X-Forwarded-Proto http
+	http-request set-header X_Forwarded-Proto http
 	default_backend webkokole-backend
 
 frontend webkokole-frontend-https
 	bind *:443 ssl crt /etc/haproxy/certs/www.webkokole.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	default_backend webkokole-backend
-
 
 backend webkokole-backend
 	balance roundrobin
