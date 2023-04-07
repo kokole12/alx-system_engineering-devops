@@ -37,6 +37,7 @@ frontend webkokole-frontend
 	bind *:80
 	mode http
 	http-request set-header X_Forwarded-Proto http
+	http-request redirect scheme https code 301 unless { ssl_fc }
 	default_backend webkokole-backend
 
 frontend webkokole-frontend-https
