@@ -2,7 +2,7 @@
 # script to change user www-data to user nginx
 sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
 #script to replace port 80 with 8080
-sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
+sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
 #folder permission
 chmod 644 /etc/nginx/nginx.conf
 pkill apache2
