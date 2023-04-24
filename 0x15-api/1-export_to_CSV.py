@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Python script that exports an API data into csv"""
-import requests
 import csv
+import requests
 import sys
 
 
