@@ -19,13 +19,16 @@ if __name__ == '__main__':
         url = 'https://jsonplaceholder.typicode.com/users/{}'.format(USER_ID)
         url = url + '/todos/'
         response = requests.get(url)
+
         tasks = response.json()
         dict_users[USER_ID] = []
         for task in tasks:
+            TASK_COMPLETED_STATUS = task.get('completed')
+            TASK_TITLE = task.get('title')
             dict_users[USER_ID].append({
-                "task": task.get('title'),
-                "completed": task.get('completed'),
+                "task": TASK_TITLE,
+                "completed": TASK_COMPLETED_STATUS,
                 "username": USERNAME
             })
-    with open('todo_all_employees.json', 'w') as file:
-        json.dump(dict_users, file)
+    with open('todo_all_employees.json', 'w') as f:
+        json.dump(dict_users, f)
