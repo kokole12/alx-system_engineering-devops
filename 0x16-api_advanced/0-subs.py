@@ -10,9 +10,9 @@ def number_of_subscribers(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {"user-agent": "REDDITAPI/0.0.1"}
     response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 200:
-        data = response.json()
-        subscribers = data.get('data').get('subscribers')
+    data = response.json()
+    subscribers = data.get('data').get('subscribers')
+    try:
         return subscribers
-    else:
+    except Exception:
         return 0
