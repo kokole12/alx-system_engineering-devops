@@ -1,20 +1,27 @@
 #!/usr/bin/python3
-"""python script to return the top 10 posts from the reddit api"""
+
+"""
+python script to get top 10 titles from api
+"""
 import requests
 
 
 def top_ten(subreddit):
-    url = f"https://www.reddit.com/r/{subreddit}/hot/.json"
-    headers = {"user-agent": "REDDITAPI/0.0.1"}
+    if subreddit is None or not isinstance(subreddit, str):
+        print("None")
+
+    headers = {'User-agent': 'MYAPI/0.0.1'}
     params = {'limit': 10}
-    response = requests.get(url, headers=headers, params=params,
-                            allow_redirects=False)
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
 
-    if response.status_code == 200:
-        data = response.json()
-        posts = data.get('data').get('children')
-        for post in posts:
-            print(post.get('data').get('title'))
+    response = requests.get(url, headers=headers, params=params)
+    data = response.json()
 
-    else:
-        print(None)
+    try:
+        my_data = data.get('data').get('children')
+
+        for i in my_data:
+            print(i.get('data').get('title'))
+
+    except Exception:
+        print("None")
