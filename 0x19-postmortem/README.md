@@ -13,4 +13,9 @@
      <li><p>Open the cpanel of the domain name provider  and configured the new ip address to the A Record.
     </p></li>
 </ul>
-<h2></h2>
+<h2>Root Cause</h2>
+<p>The root cause of the issue was an abrupt change in the ip address of the server which didn't allow access to the server at that specific ip address.
+</p>
+<h2>Corrective and Preventive measures</h2>
+<p>The corrective and preventive measures to this problem are that the ip address to the server should be fixed and not dynamic to avoid future ip address changes.
+</p>
